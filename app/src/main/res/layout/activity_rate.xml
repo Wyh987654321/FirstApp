@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RateActivity"
+    android:orientation="vertical">
+
+
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_labe"
+        android:inputType="number"
+        android:layout_marginTop="45dp"
+        android:textSize="35sp"
+        android:gravity="center"
+        android:autofillHints="" tools:targetApi="o"/>
+
+    <TextView
+        android:id="@+id/out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sccore"
+        android:textSize="35sp" />
+
+    <Button
+        android:id="@+id/dollar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dollar"
+        android:textSize="35sp"
+        android:onClick="onclik"/>
+
+    <Button
+        android:id="@+id/euro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/euro"
+        android:textSize="35sp"
+        android:onClick="onclik"/>
+
+    <Button
+        android:id="@+id/won"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/won"
+        android:textSize="35sp"
+        android:onClick="onclik"/>
+
+    <Button
+        android:id="@+id/config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/config_label"
+        android:onClick="config"
+        android:textSize="35sp" />
+
+</LinearLayout>
