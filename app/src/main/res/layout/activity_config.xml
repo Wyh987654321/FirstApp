@@ -14,7 +14,7 @@
         android:textSize="35sp"
         android:ems="10"
         android:layout_marginTop="40dp"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         />
 
     <EditText
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:textSize="35sp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:importantForAutofill="no" />
 
     <EditText
@@ -32,7 +32,7 @@
         android:layout_height="56dp"
         android:ems="10"
         android:textSize="35sp"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/change"
