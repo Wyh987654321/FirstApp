@@ -31,7 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class RateActivity extends AppCompatActivity implements Runnable {
-    private  int date;  //用于存储日期，当日期发生改变时，值也会改变
+
     EditText inp;
     TextView out;
     float result;
@@ -39,9 +39,11 @@ public class RateActivity extends AppCompatActivity implements Runnable {
     float dollar_rate=0.13f;
     float euro_rate=0.14f;
     float won_rate=173.64f;
+    private  int date;  //用于存储日期，当日期发生改变时，值也会改变
     SharedPreferences sp2;    //用于从SharedPreferences中取出date日期
     SharedPreferences share;  //用于存储date
     SharedPreferences.Editor editor;//share的editor对象
+    int truedate;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate);
@@ -179,7 +181,6 @@ public class RateActivity extends AppCompatActivity implements Runnable {
 //        }
         //用于保存获取的汇率
         Bundle bundle = new Bundle();
-        Log.i("run","date="+date);
         Document doc = null;
         /*
             获取时间，每次执行run方法都会获取时间，用于之后比较
@@ -187,8 +188,8 @@ public class RateActivity extends AppCompatActivity implements Runnable {
         SimpleDateFormat formatter= new SimpleDateFormat("dd 'at' HH:mm:ss z");
         Date date2 = new Date(System.currentTimeMillis());
         String time =date2.toString();
-        int truedate =Integer.parseInt(time.substring(8,10));  //从时间中取出日期
-
+        truedate =Integer.parseInt(time.substring(8,10).trim());  //从时间中取出日期
+        Log.i("run","truedate="+truedate);
         date=sp2.getInt("date",0); //取出SharedPreferences中的date
         /*
         理论上这个if条件只会执行一次，就是代码修改后的第一次editor还没有还没有向SP中放数据的时候
