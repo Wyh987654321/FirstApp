@@ -157,6 +157,11 @@ public class RateActivity extends AppCompatActivity implements Runnable {
         if(item.getItemId()==R.id.menu_set){
             openconfig();
         }
+        else if(item.getItemId()==R.id.open_list){
+            //打开列表窗口
+            Intent list = new Intent(this, RateListActivity.class);
+            startActivity(list);
+        }
         return super.onOptionsItemSelected(item);
     }
     public void run(){

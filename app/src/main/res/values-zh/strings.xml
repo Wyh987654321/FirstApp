@@ -8,7 +8,6 @@
     <string name="sccore">0</string>
     <string name="title">温度转换</string>
     <string name="hint_1">请输入温度带单位</string>
-    <string name="conversion">转换</string>
     <string name="config_label">设置</string>
     <string name="dollar">美元</string>
     <string name="euro">欧元</string>
@@ -17,5 +16,9 @@
     <string name="name">队名A</string>
     <string name="nameb">队名B</string>
     <string name="won">韩元</string>
+    <string name="label_open_list">列表</string>
+    <string name="action_settings">设置</string>
+    <string name="save">保存</string>
+    <string name="conversion">转换</string>
 
 </resources>

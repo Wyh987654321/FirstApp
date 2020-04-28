@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">FirstApp</string>
-    <string name="action_settings" translatable="false">Settings</string>
+    <string name="action_settings" >Settings</string>
     <string name="title">Temperature conversion</string>>
     <string name="sccore">0</string>>
     <string name="btn1">+3 Points</string>>
@@ -8,7 +8,7 @@
     <string name="btn3">+1 Points</string>>
     <string name="btn4">RESET</string>
     <string name="hint_1">Please enter temperature with unit</string>
-    <string name="conversion">conversion</string>
+    <string name="save">save</string>
     <string name="name">Team A</string>
     <string name="nameb">TeamB</string>
     <string name="hint_labe">Please input RMB</string>
@@ -16,5 +16,7 @@
     <string name="dollar">Dollar</string>
     <string name="euro">Euro</string>
     <string name="won">Won</string>
-    <string name="config_label">config</string>>
+    <string name="conversion">conversion</string>
+    <string name="config_label">config</string>
+    <string name="label_open_list">OpenLIst</string>>
 </resources>
