@@ -69,8 +69,6 @@ public class RateActivity extends AppCompatActivity implements Runnable {
         else{
             Log.i("run","不需要更新");
         }
-
-
         handler = new Handler() {
             @Override
             public void handleMessage(@NonNull Message msg) {
@@ -93,7 +91,6 @@ public class RateActivity extends AppCompatActivity implements Runnable {
                 super.handleMessage(msg);
             }
         };
-
     }
     public void onclik(View btn){
         String inp2=inp.getText().toString();

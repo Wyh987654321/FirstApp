@@ -17,6 +17,10 @@
     <string name="euro">Euro</string>
     <string name="won">Won</string>
     <string name="conversion">conversion</string>
+    <string name="nodata">NoData</string>
     <string name="config_label">config</string>
-    <string name="label_open_list">OpenLIst</string>>
+    <string name="label_open_list">OpenLIst</string>
+    <string name="school_title" translatable="false">西南财经大学经济信息工程学院通知公告</string>
+    <string name="school_hint" translatable="false">请输入关键字</string>
+    <string name="school_btn" translatable="false">查询</string>
 </resources>

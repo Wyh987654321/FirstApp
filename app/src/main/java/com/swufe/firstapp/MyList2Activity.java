@@ -1,10 +1,13 @@
 package com.swufe.firstapp;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
@@ -21,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MyList2Activity extends ListActivity implements Runnable, AdapterView.OnItemClickListener {
+public class MyList2Activity extends ListActivity implements Runnable, AdapterView.OnItemClickListener,AdapterView.OnItemLongClickListener{
     Handler handler;
     private ArrayList<HashMap<String,String>> listItem;  //存放文字，图片信息
     private SimpleAdapter listItemAdapter;    //适配器
@@ -35,17 +38,18 @@ public class MyList2Activity extends ListActivity implements Runnable, AdapterVi
             public void handleMessage(@NonNull Message msg) {
                 super.handleMessage(msg);
                 if(msg.what==5){
-                    ArrayList<HashMap<String,String>> list2 =(ArrayList<HashMap<String,String>>)msg.obj;
-                    listItemAdapter = new SimpleAdapter(MyList2Activity.this,list2,
+                    listItem=(ArrayList<HashMap<String,String>>)msg.obj;
+                    listItemAdapter = new SimpleAdapter(MyList2Activity.this,listItem,
                             R.layout.list_item,
                             new String []{"ItemTitle","ItemDetail"},
                             new int[]{R.id.itemTitle,R.id.itemDetail});
-                    setListAdapter(listItemAdapter);
+                   setListAdapter(listItemAdapter);
 
                 }
             }
         };
         getListView().setOnItemClickListener(this);
+        getListView().setOnItemLongClickListener(this);
         //子线程开启
         Thread t = new Thread(this);
         t.start();
@@ -116,5 +120,21 @@ public class MyList2Activity extends ListActivity implements Runnable, AdapterVi
         rateSel.putExtra("currency",currency);
         rateSel.putExtra("rate",Float.parseFloat(rate));
         startActivity(rateSel);
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        Log.i("run","我长按了");
+        builder.setTitle("提示").setMessage("请确认是否删除当前数据").setPositiveButton("是", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                listItem.remove(position);
+                listItemAdapter.notifyDataSetChanged();
+            }
+        })
+                .setNegativeButton("否",null);
+        builder.create().show();
+        return true;
     }
 }

@@ -20,5 +20,6 @@
     <string name="action_settings">设置</string>
     <string name="save">保存</string>
     <string name="conversion">转换</string>
+    <string name="nodata">没有数据</string>
 
 </resources>
